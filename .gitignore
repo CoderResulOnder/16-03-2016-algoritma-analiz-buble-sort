@@ -1,0 +1,149 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+void bubble_sort(long list[], long n)
+{
+  long c, d, t;
+  int sayac=0; 
+  int swap=0;
+  for (c = 0 ; c < ( n - 1 ); c++)
+  {
+    for (d = 0 ; d < n - c - 1; d++)
+    {
+    	sayac++;
+      if (list[d] > list[d+1])
+      {
+        /* Swapping */
+ 		swap++;
+        t         = list[d];
+        list[d]   = list[d+1];
+        list[d+1] = t;
+      }
+    }
+  }
+  printf("\ndongu sayisi %d\n",sayac);
+  printf("swap sayisi %d\n",swap);
+}
+
+int main(int argc, char *argv[]) {
+	 srand(time(NULL));
+	 int diziboyut=0;
+	 int i;
+	 printf("kaç boyutlu bir dizi oluşturmak istiyorsun");
+	 scanf("%d",&diziboyut);
+	long array[diziboyut];
+ 	long size=sizeof(array)/sizeof(array[0]);
+ 	for(i=0;i<size;i++){
+ 		array[i]=rand()%1000;
+	 }
+ 	
+ 	printf("boyut %d",size);
+
+ time_t start,end;
+  time (&start);
+  bubble_sort(array,size);
+  time (&end);
+  
+  
+  printf ("\nsure %.2lf", difftime (end,start));
+   
+   
+  	
+  
+  	
+  	
+ 	
+  printf("Sorted list in ascending order:\n");
+ int c;
+
+	return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+void bubble_sort(long list[], long n)
+{
+  long c, d, t;
+  int sayac=0; 
+  int swap=0;
+  for (c = 0 ; c < ( n - 1 ); c++)
+  {
+    for (d = 0 ; d < n - c - 1; d++)
+    {
+    	sayac++;
+      if (list[d] > list[d+1])
+      {
+        /* Swapping */
+ 		swap++;
+        t         = list[d];
+        list[d]   = list[d+1];
+        list[d+1] = t;
+      }
+    }
+  }
+  printf("\ndongu sayisi %d\n",sayac);
+  printf("swap sayisi %d\n",swap);
+}
+
+
+void insertionsort(int a[], long n)
+{
+int i ,j,temp;
+  int sayac=0;
+  int swap=0;
+ for(i=1;i<n;i++){
+      temp=a[i];
+      j=i-1;
+      sayac++;
+      while((temp<a[j])&&(j>=0)){
+      sayac++;
+      swap++;
+	  a[j+1]=a[j];
+          j=j-1;
+      }
+      a[j+1]=temp;
+  }
+  printf("\ndongu sayisi %d\n",sayac);
+  printf("swap sayisi %d\n",swap);
+}
+
+
+int main(int argc, char *argv[]) {
+	 srand(time(NULL));
+	 int diziboyut=0;
+	 int i;
+	 printf("kaç boyutlu bir dizi oluşturmak istiyorsun");
+	 scanf("%d",&diziboyut);
+	long array[diziboyut];
+ 	long size=sizeof(array)/sizeof(array[0]);
+ 	for(i=0;i<size;i++){
+ 		array[i]=rand()%1000;
+	 }
+ 	
+ 	printf("boyut %d",size);
+	insertionsort(array,size);
+  //clock_t start_t, end_t, total_t;
+
+
+   //start_t = clock();
+   
+  //bubble_sort(array,size);
+  
+   //end_t = clock();
+  
+ 
+ 
+  	
+  
+  	
+  	
+ 	
+  printf("Sorted list in ascending order:\n");
+ int c;
+
+	return 0;
+}
+Konuşma Sonu
+Bir mesaj yaz...
